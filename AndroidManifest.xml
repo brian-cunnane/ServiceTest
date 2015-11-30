@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ServiceTest">
+
+    <uses-sdk android:minSdkVersion="22" />
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name">
+        <activity android:name=".Activity_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <receiver android:name = "receiver">
+                <intent-filter><action android:name ="com.example.ServiceTest.Activity_main"/></intent-filter>
+            </receiver>
+        </activity>
+        <receiver android:name=".Receiver" />
+    </application>
+    <service
+        android:name = ".randomNumberService"
+        android:icon ="@drawable/icon">
+        <!--android:label = "@String/service_name"--></service>
+</manifest>
